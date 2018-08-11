@@ -1,0 +1,53 @@
+{
+  "name": "stl-homeless-tools",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "node bin/dev-server.js",
+    "build": "NODE_ENV=production webpack -p --progress --hide-modules",
+    "prod": "NODE_ENV=production node build/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "contributors": ["Max Bogue", "Jun Woo Seo"],
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "config": "^2.0.1",
+    "css-loader": "^1.0.0",
+    "express": "^4.16.3",
+    "express-promise-router": "^3.0.3",
+    "file-loader": "^1.1.11",
+    "knex": "^0.15.2",
+    "lodash": "^4.17.10",
+    "mini-css-extract-plugin": "^0.4.1",
+    "normalize.css": "^8.0.0",
+    "properties": "^1.2.1",
+    "sass": "^1.10.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.2.6",
+    "vue-meta": "^1.5.2",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.17",
+    "vue2-google-maps": "^0.10.2",
+    "vuex": "^3.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "chalk": "^2.4.1",
+    "liftoff": "^2.5.0",
+    "minimist": "^1.2.0",
+    "progress": "^2.0.0"
+  }
+}

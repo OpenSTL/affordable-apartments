@@ -1,0 +1,22 @@
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$block-spacing: 16px;
+
+$container-sm: 720px + $block-spacing * 2;
+$container-md: 940px + $block-spacing * 2;
+$container-lg: 1140px + $block-spacing * 2;
+
+$font-family-mono: "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$font-weight-light: 100;
+$font-weight-normal: 300;
+$font-weight-bold: 500;
+
+$line-height: 1.5;
+
+$red-dark-primary: #f44336;
+$green-dark-primary: #43a047;
+$amber-dark-primary: #ffb300;
