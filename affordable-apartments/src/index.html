@@ -1,16 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>STL Low-Income Housing</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500|Roboto+Mono:300,500" rel="stylesheet">
-  <style>
-    [v-cloak] { display: none }
-  </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<title>St. Louis Affordable Apartments</title>
+  	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500|Roboto+Mono:300,500" rel="stylesheet">
+  	<style>
+    	[v-cloak] { display: none }
+  	</style>
 </head>
 <body>
-  <div id="app" v-cloak></div>
-  <script src="/js/main.js"></script>
+	<div id="app" v-cloak></div>
+	<script src="/js/main.js"></script>
+
+	<h1>Affordable Apartments in St. Louis</h1>
+	<div>
+	<form>
+	    Max Price:
+	    <input type="text" id="maxPrice">
+	</form>
+	<form>
+	    Min Price (optional):
+	    <input id="minPrice" type="text">
+	</form>
+	<form>
+	    Zip Code (optional):
+	    <input id="zipCode" type="text">
+	</form>
+	</div>
+
+	<button onclick="search()" id="submit" disabled="true">Submit</button>
+
+	<p id="apartments"></p>
+
+	<script>
+	    $(document).ready(function(){
+	        $('#submit').attr('disabled',true);
+	        $('#maxPrice').keyup(function(){
+	            if($(this).val().length !=0)
+	                $('#submit').attr('disabled', false);            
+	            else
+	                $('#submit').attr('disabled',true);
+	        })
+	    });
+		function search() {
+		    // Get values of form fields
+		    var maxPrice = "";
+		    if (document.getElementById("maxPrice").value!="") {
+		        maxPrice = parseInt(document.getElementById("maxPrice").value);
+		    }
+		    var minPrice = "";
+		    if (document.getElementById("minPrice").value!="") {
+		        minPrice = parseInt(document.getElementById("minPrice").value);
+		    }
+		    var zipCode = document.getElementById("zipCode").value;
+
+		    // Disable submit button if max price not entered
+		    if (maxPrice=="") {
+		        document.getElementById("submit").disabled = false;
+		    }
+
+		    // Create link to apartments.com
+		    // if no zip code or min price entered
+		    if (zipCode=="" && minPrice=="") {
+		        var url = '<a href="https://www.apartments.com/saint-louis-mo/under-' + maxPrice + '/">test</a>'
+		        document.getElementById("apartments").innerHTML = url;
+		    }
+		    // if no zip code entered
+		    else if (zipCode=="") {
+		        var url = '<a href="https://www.apartments.com/saint-louis-mo/' + minPrice + '-to-' + maxPrice +'/">Apartments.com listings</a>'
+		        document.getElementById("apartments").innerHTML = url;
+		    }
+		    // if no min price entered
+		    else if (minPrice=="") {
+		        var url = '<a href="https://www.apartments.com/saint-louis-mo-' + zipCode + '/under-' + maxPrice + '/">Apartments.com listings</a>'
+		        document.getElementById("apartments").innerHTML = url;
+		    }
+		    // if everything entered
+		    else {
+		        var url = '<a href="https://www.apartments.com/saint-louis-mo-' + zipCode + '/' + minPrice + '-to-' + maxPrice + '/">Apartments.com listings</a>'
+		        document.getElementById("apartments").innerHTML = url;
+		    }
+		}
+	</script>
 </body>
 </html>
