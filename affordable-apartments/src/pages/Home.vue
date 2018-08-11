@@ -5,6 +5,10 @@
     <div :class="$style.left">
       <form :class="$style.controls">
         <div>
+          <label for="min">Zipcode</label>
+          <input type="number" id="zipcode" name="zipcode">
+        </div>
+        <div>
           <label for="min">Min</label>
           <input v-model="min" type="number" id="min" name="min">
         </div>

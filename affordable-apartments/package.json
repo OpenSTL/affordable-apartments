@@ -8,7 +8,10 @@
     "prod": "NODE_ENV=production node build/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "contributors": ["Max Bogue", "Jun Woo Seo"],
+  "contributors": [
+    "Max Bogue",
+    "Jun Woo Seo"
+  ],
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
